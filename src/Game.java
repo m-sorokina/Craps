@@ -31,7 +31,7 @@ public class Game {
             }
             System.out.printf("You have %d%n", sum);
             if (sum > 0) {
-                System.out.println("Do you want to continue (y/n)?");
+                System.out.print("Do you want to continue (y/n)?: ");
                 repeat = in.nextLine();
             } else {
                 System.out.println("See you later. Get luck next time!");
@@ -43,7 +43,7 @@ public class Game {
 
     public static int getBet(String prompt) {
         int bet = 0;
-        System.out.printf("%s", prompt);
+        System.out.print(prompt);
         while (bet <= 0) {
             String temp = in.nextLine();
             try {
