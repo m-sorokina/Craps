@@ -7,20 +7,18 @@ public class Set {
     public Result play() {
 
         int diceResult = rollDice();
-        Result result;
 
-        switch (diceResult) {
-            case 2, 3, 12 -> result = Result.LOSS;
-            case 7, 11 -> result = Result.WIN;
+        return switch (diceResult) {
+            case 2, 3, 12 -> Result.LOSS;
+            case 7, 11 -> Result.WIN;
             default -> {
                 int diceResult2 = rollDice();
                 while (diceResult2 != diceResult && diceResult2 != 7) {
                     diceResult2 = rollDice();
                 }
-                result = (diceResult2 == diceResult) ? Result.WIN : Result.LOSS;
+                yield (diceResult2 == diceResult) ? Result.WIN : Result.LOSS;
             }
-        }
-        return result;
+        };
     }
 
     public int rollDice() {

@@ -13,13 +13,9 @@ public class Game {
 
         String repeat = "y";
         while (repeat.equals("y")) {
-            System.out.printf("Make your bet: ");
-            int bet = in.nextInt();
-            in.nextLine();
+            int bet = getBet("Make your bet: ");
             while (bet > sum) {
-                System.out.printf("Too much, repeat your bet: ");
-                bet = in.nextInt();
-                in.nextLine();
+                bet = getBet("Too much, repeat your bet: ");
             }
 
             Set set = new Set();
@@ -43,6 +39,23 @@ public class Game {
             }
         }
 
+    }
+
+    public static int getBet(String prompt) {
+        int bet = 0;
+        System.out.printf("%s", prompt);
+        while (bet <= 0) {
+            String temp = in.nextLine();
+            try {
+                bet = Integer.parseInt(temp);
+                if (bet <= 0) {
+                    throw new Exception();
+                }
+            } catch (Exception e) {
+                System.out.print("You haven't made your bet, please repeat: ");
+            }
+        }
+        return bet;
     }
 
 }
