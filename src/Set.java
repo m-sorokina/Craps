@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Set {
 
-    Random random = new Random();
+    static Random random = new Random();
 
-    public Result play() {
+    public static Result play() {
 
         int diceResult = rollDice();
 
@@ -21,7 +21,7 @@ public class Set {
         };
     }
 
-    public int rollDice() {
+    public static int rollDice() {
 
         System.out.print("Roll dice (press Enter):");
         Game.in.nextLine();

@@ -9,7 +9,7 @@ public class Game {
         System.out.printf("You have %d%n", this.sum);
     }
 
-    public void play() {
+    public static void play(int sum) {
 
         String repeat = "y";
         while (repeat.equals("y")) {
@@ -18,9 +18,8 @@ public class Game {
                 bet = getBet("Too much, repeat your bet: ");
             }
 
-            Set set = new Set();
-
-            Result result = set.play();
+//            Set set = new Set();
+            Result result = Set.play();
 
             if (result == Result.WIN) {
                 sum += bet;
