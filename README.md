@@ -8,7 +8,7 @@ Once a point is set, the player continues rolling:
  - rolling the point again wins.  
  - rolling a 7 loses.  
 
- Sample of console output
+ Console output
 ```
 Welcome to the Craps game!
 You have 1000
